@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="menu" class="com.entity.menu">
+        <property name="name" value="coffee"></property>
+        <!--<property name="id" value="6"></property>-->
+        <property name="price" value="20"></property>
+    </bean>
+    <bean id="add" class="com.Imp.addImp"></bean>
+    <bean id="del" class="com.Imp.delImp"></bean>
+    <bean id="list" class="com.Imp.listImp"></bean>
+    <bean id="proxy" class="com.proxy.menuProxy">
+        <property name="add" ref="add"></property>
+        <property name="del" ref="del"></property>
+        <property name="menu" ref="menu"></property>
+        <property name="list" ref="list"></property>
+    </bean>
+</beans>
